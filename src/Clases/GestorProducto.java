@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestorProducto {
- private static Producto Producto;
+
+    private static Producto Producto;
     private static final List<Producto> listaProductos = new ArrayList<>();
-    
+
     public void agregarProducto(int id, String nombre, double precio) {
         for (Producto producto : listaProductos) {
             if (producto.getId() == id) {
@@ -17,7 +18,7 @@ public class GestorProducto {
         Producto = new Producto(id, nombre, precio);
         listaProductos.add(Producto);
     }
-    
+
     public void mostrarProductos() {
         if (listaProductos.isEmpty()) {
             System.err.println("SIN PRODUCTOS");
@@ -27,7 +28,7 @@ public class GestorProducto {
             }
         }
     }
-    
+
     public void actualizarPrecioProducto(int id, double precio) {
         for (Producto producto : listaProductos) {
             if (producto.getId() == id) {
@@ -38,7 +39,7 @@ public class GestorProducto {
         }
         System.err.println("EL PRODUCTO NO EXISTE");
     }
-    
+
     public void eliminarProducto(int id) {
 
         for (Producto producto : listaProductos) {
@@ -50,6 +51,6 @@ public class GestorProducto {
         }
 
         System.err.println("EL PRODUCTO NO EXISTE");
-    
+
     }
 }
